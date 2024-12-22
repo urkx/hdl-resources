@@ -1,0 +1,36 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x129604800 .scope module, "votador" "votador" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "z";
+o0x1300180d0 .functor BUFZ 1, C4<z>; HiZ drive
+o0x130018100 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x60000378c150 .functor AND 1, o0x1300180d0, o0x130018100, C4<1>, C4<1>;
+o0x130018130 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x60000378c1c0 .functor AND 1, o0x1300180d0, o0x130018130, C4<1>, C4<1>;
+L_0x60000378c230 .functor OR 1, L_0x60000378c150, L_0x60000378c1c0, C4<0>, C4<0>;
+L_0x60000378c2a0 .functor AND 1, o0x130018100, o0x130018130, C4<1>, C4<1>;
+L_0x60000378c310 .functor OR 1, L_0x60000378c230, L_0x60000378c2a0, C4<0>, C4<0>;
+v0x600002e88000_0 .net *"_ivl_0", 0 0, L_0x60000378c150;  1 drivers
+v0x600002e88090_0 .net *"_ivl_2", 0 0, L_0x60000378c1c0;  1 drivers
+v0x600002e88120_0 .net *"_ivl_4", 0 0, L_0x60000378c230;  1 drivers
+v0x600002e881b0_0 .net *"_ivl_6", 0 0, L_0x60000378c2a0;  1 drivers
+v0x600002e88240_0 .net "a", 0 0, o0x1300180d0;  0 drivers
+v0x600002e882d0_0 .net "b", 0 0, o0x130018100;  0 drivers
+v0x600002e88360_0 .net "c", 0 0, o0x130018130;  0 drivers
+v0x600002e883f0_0 .net "z", 0 0, L_0x60000378c310;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "votador.v";
