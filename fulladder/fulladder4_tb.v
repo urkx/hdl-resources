@@ -14,11 +14,12 @@ module fulladder4_tb ();
         $monitor("%b + %b = %b", a, b, s);
         a = 4'b0001;
         b = 4'b0001;
-        #20
+        #2000
         a = 4'b0011;
         b = 4'b0001;
-        #20
+        #2000
         a = 4'b0011;
         b = 4'b0111;
     end
 endmodule
+

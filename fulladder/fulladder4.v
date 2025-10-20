@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 // 4 1-bit fulladder connection
 module fulladder4 (
     input [3:0] a,
@@ -13,3 +15,4 @@ module fulladder4 (
     fulladder fa2(.a(a[2]), .b(b[2]), .cin(cout2), .s(s[2]), .cout(cout3));
     fulladder fa3(.a(a[3]), .b(b[3]), .cin(cout3), .s(s[3]), .cout(cout4));
 endmodule
+
