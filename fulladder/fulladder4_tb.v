@@ -9,6 +9,12 @@ module fulladder4_tb ();
     wire cout;
 
     fulladder4 uut(.a(a), .b(b), .cin(cin), .s(s), .cout4(cout));
+
+    initial begin
+	$dumpfile("waves.vcd");
+	$dumpvars(0, fulladder4_tb);
+    end
+
     initial begin
         $monitor("%b + %b = %b; Carry = %b", a, b, s, cout);
         a = 4'b0001;
