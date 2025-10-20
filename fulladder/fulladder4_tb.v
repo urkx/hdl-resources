@@ -11,12 +11,9 @@ module fulladder4_tb ();
     fulladder4 uut(.a(a), .b(b), .cin(cin), .s(s), .cout4(cout));
 
     initial begin
-	$dumpfile("waves.vcd");
+        $dumpfile("waves.vcd");
 	$dumpvars(0, fulladder4_tb);
-    end
-
-    initial begin
-        $monitor("%b + %b = %b; Carry = %b", a, b, s, cout);
+    	$monitor("%b + %b = %b; Carry = %b", a, b, s, cout);
         a = 4'b0001;
         b = 4'b0001;
         #2000
@@ -31,6 +28,7 @@ module fulladder4_tb ();
 	#2000
 	a = 4'b1000;
 	b = 4'b1111;
+	#500 $finish;
     end
 endmodule
 
